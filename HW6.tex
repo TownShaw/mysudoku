@@ -1,0 +1,75 @@
+\documentclass[UTF8]{ctexart}
+\usepackage[left=1.5cm,right=1.5cm,top=1.5cm,bottom=1.5cm]{geometry}
+\usepackage{xcolor}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{bm}
+\usepackage[thmmarks,amsmath]{ntheorem}
+
+\begin{document}
+    \title{人工智能基础第六次作业}
+    \author{肖桐 PB18000037}
+    \date{2021 年 5 月 3 日}
+    \maketitle
+
+    \textnormal{\textbf{8.24.}}\newline
+    词汇表：\newline
+    $Student(s)$ 表示 $s$ 是否为一个学生.\newline
+    $Have(s, class, time)$ 表示 s 在 time 时上了 class 这门课.\newline
+    $Pass(s, class)$ 表示 s 通过了课程 class.\newline
+    $Score(s, class, score)$ 表示 s 在 课程 class 上的成绩为 score.\newline
+    $Person(p)$ 表示 p 是一个人.\newline
+    $Insurance(i)$ 表示 i 是保险.\newline
+    $Expensive(thing)$ 表示 thing 是昂贵的.\newline
+    $Smart(p)$ 表示 p 是聪明的.\newline
+    $Buy(p, thing)$ 表示 p 买了物品 thing.\newline
+    $Agent(a)$ 表示代理 a.\newline
+    $Sell(a, ins, p)$ 表示 a 将 ins 卖给 p.\newline
+    $Barber(b)$ 表示 b 是一个理发师.\newline
+    $Intown(p)$ 表示 p 在镇上.\newline
+    $Shave(x, y)$ 表示 x 为 y 刮胡子.\newline
+    $Citizen(p, place)$ 表示 p 是 place 处公民.\newline
+    $Parent(p)$ 表示 p 的父母.\newline
+    $Born(p, place)$ 表示 p 在 place 处出生.\newline
+    $Resident(p, place)$ 表示 p 永久居住在 place.\newline
+    $Born_to_Citizen(p, place)$ 表示 p 生来就是 place 处的公民.\newline
+    $Politician(p)$ 表示 p 是一个政客.\newline
+    $Fool(x, y, t)$ 表示 x 在时刻 t 愚弄了 y.\newline
+    (a). $\exists s\ Student(s) \wedge Have(s, French, 2001 Spring)$\newline
+    (b). $\forall s, t\ Student(s) \wedge Have(s, French, t) \Rightarrow Pass(s, French)$\newline
+    (c). $\exists s\ Student(s) \wedge Have(s, Greek, 2001 Spring) \wedge \forall y \neq x \Rightarrow \neg Have(y, Greek, 2001 Spring)$\newline
+    (d). $\forall score\ \exists s_G\ \forall s_F\ Score(s_G, Greek, score) > Score(s_F, French, score)$\newline
+    (e). $\forall p\ Person(p) \wedge Insurance(ins) \wedge Buy(p, ins) \Rightarrow Smart(p)$\newline
+    (f). $\forall p, ins\ Person(p) \wedge Insurance(ins) \wedge Expensive(ins) \Rightarrow Buy(p, ins)$\newline
+    (g). $\exists A, ins_1\ Agent(A) \wedge (\forall p, ins_2\ Person(p) \wedge \neg Buy(p, ins_2)) \Rightarrow Sell(A, ins_1, p)$\newline
+    (h). $\exists bar\ Barber(bar) \wedge Intown(bar) \wedge \forall p\ Person(p) \wedge \neg Shave(p, p) \Rightarrow Shave(bar, p)$\newline
+    (i). $\forall p\ Citizen(Parent(p), Britain) \vee Resident(Parent(p), Britain) \Rightarrow Born_to_Citizen(p, Britain)$\newline
+    (j). $\forall p\ \neq Born(p, Britain) \wedge Born_to_Citizen(Parent(p), Britain) \Rightarrow Citizen(p, Britain)$\newline
+    (k). $\forall p\ Politician(p) \Rightarrow (\exists y\forall t\ Person(y) \wedge Fools(x, y, t)) \wedge (\exists t \forall y\ Person(y) \Rightarrow Fools(x, y, t)) \wedge \neg(\forall t\forall y\ Person(y) \Rightarrow Fools(x, y, t))$
+
+    \textnormal{\textbf{8.17.}}\newline
+    该定义对最右上角的方格无效. 因为此时 $[x, y + 1], [x + 1, y]$ 已超出边界, 因此存在问题.
+
+    \textnormal{\textbf{9.3.}}\newline
+    b 和 c. 因为去掉量词 $\exists$ 时不能将约束变量替换为知识库中出现的名词.
+
+    \textnormal{\textbf{9.4.}}\newline
+    (a). 合一置换：$\{x/A, y/B, z/B\}$.\newline
+    (b). 不存在合一置换.\newline
+    (c). 合一置换：$\{x/John, y/John\}$.\newline
+    (d). 不存在合一置换.
+
+    \textnormal{\textbf{9.6.}}
+    (a). $\forall x\ Horse(x) \Rightarrow Mammal(x)$\newline
+    $\forall x\ Cow(x) \Rightarrow Mammal(x)$\newline
+    $\forall x\ Pig(x) \Rightarrow Mammal(x)$\newline
+    (b). $\forall x\ Horse(x) \Rightarrow Horse(Offspring(x))$\newline
+    (c). $Horse(Bluebeard)$\newline
+    (d). $Parent(Bluebeard, Charlie)$\newline
+    (e). $\forall x, y\ Offspring(x, y) \Leftrightarrow Parent(y, x)$\newline
+    (f). $\forall x\ (Mammal(x) \Rightarrow \exists y\ Parent(y, x))$
+
+    \textnormal{\textbf{9.13.}}
+
+\end{document}

@@ -1,0 +1,46 @@
+\documentclass[UTF8]{ctexart}
+\usepackage[left=1.5cm,right=1.5cm,top=1.5cm,bottom=1.5cm]{geometry}
+\usepackage{xcolor}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{bm}
+\usepackage[thmmarks,amsmath]{ntheorem}
+
+\begin{document}
+    \title{人工智能基础第五次作业}
+    \author{肖桐 PB18000037}
+    \date{2021 年 5 月 3 日}
+    \maketitle
+
+    \textnormal{\textbf{7.13.}}\newline
+    (a). 由 implication elimination 有：
+    $$
+    (\alpha \Rightarrow \beta) \Leftrightarrow (\neg\alpha \vee \beta)
+    $$
+    因此有：
+    $$
+    \neg(P_1 \wedge P_2 \wedge \cdots \wedge P_m) \vee Q \Leftrightarrow ((P_1 \wedge P_2 \wedge \cdots \wedge P_m) \Rightarrow Q)
+    $$
+    由 $De Morgan$ 律, 有：
+    $$
+    \neg(P_1 \wedge P_2 \wedge \cdots \wedge P_m) \Leftrightarrow (\neg P_1 \vee \neg P_2 \vee \cdots \vee \neg P_m)
+    $$
+    因此有：
+    $$
+    (\neg P_1 \vee \neg P_2 \vee \cdots \vee \neg P_m \vee Q) \Leftrightarrow ((P_1 \wedge P_2 \wedge \cdots \wedge P_m) \Rightarrow Q)
+    $$
+    (b). 将 positive literals 记为 $Q_q \vee \cdots \vee Q_n$, negtive literals 记为 $\neg P_1 \vee \cdots \vee \neg P_m$.\newline
+    于是该语句可以表示为：
+    $$
+    (\neg P_1 \vee \cdots \neg P_m) \vee (Q_q \vee \cdots \vee Q_n)
+    $$
+    由 (a) 中结论可得：
+    $$
+    (P_1 \wedge \cdots \wedge P_m) \Rightarrow (Q_q \vee \cdots \vee Q_n)
+    $$
+    (c). 
+
+    \textnormal{\textbf{证明：}}
+    
+\end{document}
